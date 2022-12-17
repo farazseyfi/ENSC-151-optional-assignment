@@ -1,5 +1,7 @@
-1 faraz 75 3
-2 faraz 97 4 
-3 faraz 98 3
+1 faraz 99 4
+2 faraz 67 2
+3 faraz 87 4
+4 faraz 91 3
+5 faraz 95 2
 
 
