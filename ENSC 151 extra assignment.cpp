@@ -1,22 +1,28 @@
 // ENSC 151 extra assignment.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// A C++ program which grabs data such as percentage and credit to calculate the gpa of a few courses in a 4.33 scale.
+// created by Faraz Seyfi and Ali Aryo for ENSC 151 optional assignment.
 #include <cstdlib>
 #include <iostream>
 #include<fstream>
-#include<cmath>
+#include<string>
 using namespace std;
 int main()
 {
 	int id, percentage;
 	double gradepoint = 0, totalgradepoint = 0, cumulativegpa = 0, credit=0, totalcredit = 0;
-	string  name, option;
+	string  name;
+	
+	//opening the file
 	ifstream theFile("gpainfo.txt");
+	// checking to see if the file was succesfuly opened.If not, it will notice the user!
 	if (!theFile.is_open()) {
 		cerr << "unable to open the file! please double check the file name." << endl;
 		return 1;
 	}
+	// a while loop to loop throught the text file and grab data such as percentage and credit for each course
 	while (theFile >> id >> name >> percentage >> credit)
 	{
+		// a switch case to calculate the gradepoint for each specific percentage.
 		switch (percentage)
 		{
 		case 100:
@@ -96,9 +102,7 @@ int main()
 		totalgradepoint += gradepoint;
 	}
 	cumulativegpa = totalgradepoint / totalcredit;
-	double rounded = round(cumulativegpa * 100.0) / 100.0;
 	cout << name << "'s cumulative gpa is: " << cumulativegpa << endl;
-	
 	}
 
 
